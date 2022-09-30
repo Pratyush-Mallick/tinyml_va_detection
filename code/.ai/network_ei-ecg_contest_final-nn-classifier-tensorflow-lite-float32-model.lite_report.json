@@ -1,0 +1,346 @@
+{
+    "_allocate_inputs": 4,
+    "_allocate_outputs": 4,
+    "cli_parameters": "generate --name network -m C:/Users/Asus/Desktop/IOT/tinyml_IEEE/ei_dsp_algorithm/ei-ecg_contest_final-nn-classifier-tensorflow-lite-float32-model.lite --type tflite --compression low --verbosity 1 --workspace C:\\Users\\Asus\\AppData\\Local\\Temp\\mxAI_workspace329756885271008952577217609982886 --output C:\\Users\\Asus\\.stm32cubemx\\network_output --allocate-inputs --allocate-outputs",
+    "cli_version": {
+        "major": 1,
+        "micro": 0,
+        "minor": 6
+    },
+    "cli_version_str": "1.6.0",
+    "compression": {
+        "factor": 3.812223206377325,
+        "layers": {
+            "dense_0_weights": 4.0,
+            "dense_1_weights": 4.0,
+            "dense_2_weights": 4.0
+        }
+    },
+    "date_time": "Thu Sep 29 22:36:03 2022",
+    "error": 0,
+    "error_str": [],
+    "exec_cmd": "generate",
+    "exec_duration": 0.0,
+    "hash": "3a7d3c432575b54c868d5efa002a9d10",
+    "inputs": [
+        "serving_default_x0"
+    ],
+    "layers": [
+        {
+            "c_id": [
+                0,
+                1
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 268,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        67,
+                        1
+                    ]
+                },
+                "rom_size": 8124
+            },
+            "id": 0,
+            "inputs": [],
+            "name": "serving_default_x0",
+            "original": "",
+            "type": "Input"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 6800,
+                "n_params": 6800,
+                "psize": 27200,
+                "rom_output": {
+                    "c_size": 400,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        100,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 0,
+            "inputs": [
+                "serving_default_x0"
+            ],
+            "name": "dense_0",
+            "original": "FULLY_CONNECTED",
+            "type": "Dense"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 100,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 400,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        100,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 0,
+            "inputs": [
+                "dense_0"
+            ],
+            "name": "nl_0_nl",
+            "original": "FULLY_CONNECTED",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                2,
+                3
+            ],
+            "extras": {
+                "n_macc": 5050,
+                "n_params": 5050,
+                "psize": 20200,
+                "rom_output": {
+                    "c_size": 200,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        50,
+                        1
+                    ]
+                },
+                "rom_size": 6224
+            },
+            "id": 1,
+            "inputs": [
+                "nl_0_nl"
+            ],
+            "name": "dense_1",
+            "original": "FULLY_CONNECTED",
+            "type": "Dense"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 50,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 200,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        50,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 1,
+            "inputs": [
+                "dense_1"
+            ],
+            "name": "nl_1_nl",
+            "original": "FULLY_CONNECTED",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                4,
+                5
+            ],
+            "extras": {
+                "n_macc": 1020,
+                "n_params": 1020,
+                "psize": 4080,
+                "rom_output": {
+                    "c_size": 80,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        20,
+                        1
+                    ]
+                },
+                "rom_size": 2104
+            },
+            "id": 2,
+            "inputs": [
+                "nl_1_nl"
+            ],
+            "name": "dense_2",
+            "original": "FULLY_CONNECTED",
+            "type": "Dense"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 20,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 80,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        20,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 2,
+            "inputs": [
+                "dense_2"
+            ],
+            "name": "nl_2_nl",
+            "original": "FULLY_CONNECTED",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                6
+            ],
+            "extras": {
+                "n_macc": 42,
+                "n_params": 42,
+                "psize": 168,
+                "rom_output": {
+                    "c_size": 8,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        2,
+                        1
+                    ]
+                },
+                "rom_size": 168
+            },
+            "id": 3,
+            "inputs": [
+                "nl_2_nl"
+            ],
+            "name": "dense_3",
+            "original": "FULLY_CONNECTED",
+            "type": "Dense"
+        },
+        {
+            "c_id": [
+                7
+            ],
+            "extras": {
+                "n_macc": 30,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 8,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        2,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 4,
+            "inputs": [
+                "dense_3"
+            ],
+            "name": "nl_4",
+            "original": "SOFTMAX",
+            "type": "Nonlinearity"
+        }
+    ],
+    "model_files": [
+        "C:\\Users\\Asus\\Desktop\\IOT\\tinyml_IEEE\\ei_dsp_algorithm\\ei-ecg_contest_final-nn-classifier-tensorflow-lite-float32-model.lite"
+    ],
+    "model_n_params": 12912,
+    "model_name": "eiecg_contest_finalnnclassifiertensorflowlitefloat32model",
+    "model_size": 51648,
+    "model_type": "tflite",
+    "name": "network",
+    "outputs": [
+        "nl_4"
+    ],
+    "ram_io_size": [
+        268,
+        8
+    ],
+    "ram_size": [
+        668,
+        668
+    ],
+    "report_version": 1.1,
+    "rom_cfact": 1.0,
+    "rom_heap_inspector": 2048,
+    "rom_inputs": [
+        {
+            "c_size": 268,
+            "c_type": "float",
+            "name": "serving_default_x0"
+        }
+    ],
+    "rom_n_macc": 13112,
+    "rom_outputs": [
+        {
+            "c_size": 8,
+            "c_type": "float",
+            "name": "nl_4"
+        }
+    ],
+    "rom_size": 16620,
+    "strategy": "heap_overlay",
+    "tools_api_version": {
+        "major": 1,
+        "micro": 0,
+        "minor": 6
+    },
+    "tools_version": {
+        "extra": "RC5",
+        "major": 7,
+        "micro": 0,
+        "minor": 2
+    },
+    "val_error": -1.0,
+    "val_error_desc": "None (None) #-1",
+    "val_metrics": []
+}
